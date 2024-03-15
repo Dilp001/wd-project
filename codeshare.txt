@@ -1,0 +1,1160 @@
+--------------------WD
+---------------------------------registration:-------------------------------------
+<html>
+<head>
+<title>personal information</title>
+<script src="JQ.js"></script>
+<link rel="stylesheet" href="bootstrap.css">
+<script>
+function load() {
+var s = document.createElement("option");
+var data = prompt("new language");
+s.innerHTML = data;
+$("#s1").append(s);
+}
+</script>
+<style>
+*{
+margin: 0px;
+padding: 0px;
+}
+body{
+background-color: rgba(19, 63, 63, 0.645);
+}
+h1{
+text-align: center;
+}
+.form1{
+width: 490px;
+height: 530px;
+text-align: center;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+font-size: 35px;
+margin: 100px 590px;
+border-radius: 30px;
+padding: 27px;
+}
+td{
+color: white;
+margin: 22px;
+padding: 8px;
+text-align: center;
+font-size: 20px;
+}
+input{
+border-radius:10px ;
+}
+</style>
+</head>
+<body>
+<h1>Registration :</h1>
+<form class="form1">
+<table>
+<tr>
+<td>Full Name </td>
+<td>: <input type="text" name="fname"></td>
+</tr>
+<tr>
+<td>Email </td>
+<td>: <input type="email" name="email" requird></td>
+</tr>
+<tr>
+<td>Contact No </td>
+<td>: <input type="text" name="contect"></td>
+</tr>
+<tr>
+<td>Gender </td>
+<td>: <input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+</td>
+</tr>
+<tr>
+<td>Address </td>
+<td> <textarea rows="5" cols="30" name="Address"></textarea></td>
+</tr>
+<tr>
+<td>Language </td>
+<td> : <select id="s1" name="Language">
+<option>Gujarati </option>
+<option>English </option>
+<option>Hindi </option>
+</select>
+<a href="#" onclick="load()">add_language</a>
+</td>
+</tr>
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><button class="btn btn-success">Save</button></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+------------------------------login:------------------------------
+<html>
+<head>
+<title>personal information</title>
+<script src="JQ.js"></script>
+<link rel="stylesheet" href="bootstrap.css">
+<script>
+function load() {
+var s = document.createElement("option");
+var data = prompt("new language");
+s.innerHTML = data;
+$("#s1").append(s);
+}
+</script>
+<style>
+*{
+margin: 0px;
+padding: 0px;
+}
+body{
+background-color:white;
+}
+h1{
+text-align: center;
+}
+.form1{
+width: 490px;
+height: 380px;
+text-align: center;
+background-color:pink ;
+color: white;
+font-size: 35px;
+margin: 100px 590px;
+border-radius: 30px;
+padding: 27px;
+}
+td{
+color: white;
+margin: 22px;
+padding: 17px;
+text-align: center;
+font-size: 20px;
+}
+input{
+border-radius:10px ;
+}
+.btn{
+padding: 10px;
+width: 100px;
+margin: 20px;
+font-size: large;
+}
+</style>
+</head>
+<body>
+<h1>Login:</h1>
+<form class="form1">
+<table>
+<tr>
+<td>Email </td>
+<td>: <input type="email" name="email" requird></td>
+</tr>
+<tr>
+<td>User Name </td>
+<td>: <input type="text" name="uname" > </td>
+</tr>
+<tr>
+<td>Password </td>
+<td>: <input type="password" name="password"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><button class="btn btn-success">Login</button></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+------------------------------------------------contactus-----------------------------------------------------------
+<!DOCTYPE html>
+<html lang="e
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+body {
+background-color: rgb(19, 77, 77);
+}
+.feed {
+width: 490px;
+height: 480px;
+text-align: center;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+font-size: 20px;
+margin: 100px 590px;
+border-radius: 30px;
+padding: 15px;
+}
+input {
+border-radius: 10px;
+}
+.btn {
+padding: 10px;
+width: 100px;
+margin: 20px;
+font-size: large;
+}
+</style>
+</head>
+<body>
+<div class="feed">
+<h1>Contect Us</h1>
+<h2>Email : </h2>
+<h3>AJSV1976@gmail.com</h3>
+<h2>Based in :</h2>
+<h3>sun frencisco india</h3>
+<h2>Help-Line No :</h2>
+<h3>+045 456 1235 154</h3>
+</div>
+</body>
+</html>
+------------------------------AJAX FILE------------------------------------------
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "cd_catalog.xml", true);
+  xmlhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Artist</th><th>Title</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
+--------------------------------XML FILE--------------------------
+<CATALOG>
+<CD>
+<TITLE>Empire Burlesque</TITLE>
+<ARTIST>Bob Dylan</ARTIST>
+<COUNTRY>USA</COUNTRY>
+<COMPANY>Columbia</COMPANY>
+<PRICE>10.90</PRICE>
+<YEAR>1985</YEAR>
+</CD>
+<CD>
+<TITLE>Hide your heart</TITLE>
+<ARTIST>Bonnie Tyler</ARTIST>
+<COUNTRY>UK</COUNTRY>
+<COMPANY>CBS Records</COMPANY>
+<PRICE>9.90</PRICE>
+<YEAR>1988</YEAR>
+</CD>
+<CD>
+<TITLE>Greatest Hits</TITLE>
+<ARTIST>Dolly Parton</ARTIST>
+<COUNTRY>USA</COUNTRY>
+<COMPANY>RCA</COMPANY>
+<PRICE>9.90</PRICE>
+<YEAR>1982</YEAR>
+</CD>
+<TITLE>Picture book</TITLE>
+<ARTIST>Simply Red</ARTIST>
+<COUNTRY>EU</COUNTRY>
+<COMPANY>Elektra</COMPANY>
+<PRICE>7.20</PRICE>
+<YEAR>1985</YEAR>
+</CD>
+<CD>
+<TITLE>Red</TITLE>
+<ARTIST>The Communards</ARTIST>
+<COUNTRY>UK</COUNTRY>
+<COMPANY>London</COMPANY>
+<PRICE>7.80</PRICE>
+<YEAR>1987</YEAR>
+</CD>
+<CD>
+<TITLE>Unchain my heart</TITLE>
+<ARTIST>Joe Cocker</ARTIST>
+<COUNTRY>USA</COUNTRY>
+<COMPANY>EMI</COMPANY>
+<PRICE>8.20</PRICE>
+<YEAR>1987</YEAR>
+</CD>
+</CATALOG>
+------------------------extra ajax--------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- <script src="/js.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            margin: auto;
+        }
+        
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table border="2px">
+
+            <tr>
+                <td>
+                    <label for="">Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="name">
+                    <p id="nameid"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="email">
+                    <p id="nameemail"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Password:</label>
+                </td>
+                <td>
+                    <input type="password" id="password">
+                    <p id="namepass"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Gender:</label>
+                </td>
+                <td>
+                    Male <input type="radio" name="gender"><br> Female <input type="radio" name="gender">
+                    <p id="radi"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Submit:</label>
+                </td>
+                <td>
+                    <input type="button" value="Submit" id="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                let name = $("#name")
+                    // console.log("name", name[0].value);
+                if (!name[0].value) {
+                    let x = $("#nameid").text("Enter name")
+                    console.log(x);
+                } else {
+                    let y = $("#nameid").text("")
+                    console.log(y);
+                }
+
+
+                let email = $("#email")
+                   
+                if (!email[0].value) {
+                    let x = $("#nameemail").text("Enter Email")
+                  
+                } else {
+                    let y = $("#nameemail").text("")
+                
+                }
+
+                let password = $("#password")
+                    // console.log("name", name[0].value);
+                if (!password.val()) {
+                    let x = $("#namepass").text("Enter password")
+                    console.log(x);
+                } else {
+                    let y = $("#namepass").text("")
+                    console.log(y);
+                }
+
+
+                let gender = $("#gender")
+                    // console.log("name", name[0].value);
+                if (!gender[0].checked && !gender[1].checked) {
+                    $("#radi").text("Enter password")
+
+                } else {
+                    $("#radi").text("")
+
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>
+--------------------.NET
+------------------------------------Class File
+
+Imports System.Data.OleDb
+Imports System.Data
+Public Class Form1
+    Sub display()
+        Dim cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\VB\student.accdb")
+        cn.Open()
+        Dim ad As New OleDbDataAdapter("select * from student", cn)
+        Dim ds As New DataSet
+        ad.Fill(ds, "student")
+        DataGridView1.DataSource = ds.Tables("student")
+        cn.Close()
+    End Sub
+    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\VB\student.accdb")
+        cn.Open()
+        Dim cm As New OleDbCommand()
+        cm.Connection = cn
+        cm.CommandType = CommandType.Text
+        cm.CommandText = "insert into student values (" & TextBox1.Text & ",'" & TextBox2.Text & "'," & TextBox3.Text & ",'" & TextBox4.Text & "')"
+        cm.ExecuteNonQuery()
+        cn.Close()
+        MsgBox("record inserted sucessfully")
+        display()
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        display()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Dim cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\VB\student.accdb")
+        cn.Open()
+        Dim cm As New OleDbCommand()
+        cm.Connection = cn
+        cm.CommandType = CommandType.Text
+        cm.CommandText = "update student set name='" & TextBox2.Text & "',salary=" & TextBox3.Text & ",course='" & TextBox4.Text & "' where id=" & TextBox1.Text & ""
+        cm.ExecuteNonQuery()
+        cn.Close()
+        MsgBox("Record updated successfully")
+        display()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim cn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\VB\student.accdb")
+        cn.Open()
+        Dim cm As New OleDbCommand()
+        cm.Connection = cn
+        cm.CommandType = CommandType.Text
+        cm.CommandText = "delete from student where id=" & TextBox1.Text & ""
+        cm.ExecuteNonQuery()
+        cn.Close()
+        MsgBox("Record deleted successfully")
+        display()
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Me.Close()
+    End Sub
+End Class
+
+---------------------------------------JAVA
+1.	Take your full name at run time using command line arguments and display on screen using Java program. 
+ 
+public class P1 { 
+    public static void main(String args[]) { 
+        System.out.println(args[0]); 
+        System.out.println(args[1]); 
+        System.out.println(args[2]); 
+        System.out.println(args[0] + " " + args[1] + " " + args[2]); 
+    } 
+} 
+ 
+ 
+2.	Create a class Purchase in which product_id, product_name, unit_price, total_qty, total_price are data members. Take Input . from user and display result as following. (Use static variable and static function concept). 
+ 
+import java.util.*; 
+import java.util.Scanner; 
+ 
+class Purchase {     
+String PID;     
+String PName;     
+int Price;     
+int Quantity; 
+int Total; 
+    static int BILL_AMOUNT; 
+ 
+    Purchase(String PID, String PName, int Price, int Quantity) {         
+    this.PID = PID;         
+    this.PName = PName;         
+    this.Price = Price;         
+    this.Quantity = Quantity; 
+    this.Total = Price * Quantity; 
+    } 
+ 
+    void display() { 
+        BILL_AMOUNT += Total; 
+        System.out.println("\n" + PID + "\t " + PName + "\t " + Price + "\t " + Quantity + "\t\t " + Total + "\t " +     BILL_AMOUNT); 
+    } 
+static int getTotalBillAmount() { 
+        return BILL_AMOUNT; 
+    } 
+ 
+    static void displayTotalBillAmount(int total) {         
+    		System.out.println("_________________"); 
+        System.out.println("Total Bill Amount: " + total + " RS"); 
+        System.out.println("_________________"); 
+    } 
+} 
+ 
+public class P2 { 
+    public static void main(String args[]) {         
+    Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter the number of products: "); 
+        int n = sc.nextInt(); 
+ 
+        Purchase p[] = new Purchase[n];         
+        if (n >= 0 && n < 10) {             
+        for (int i = 0; i < n; i++) {                 
+        				sc.nextLine(); 
+                System.out.println("Enter " + (i + 1) + " th Item"); 
+                String PID = "P" + (i + 1); 
+                System.out.print("Enter Product Name: "); 
+                String PName = sc.nextLine();                 
+                System.out.print("Enter Price: ");                 
+                int Price = sc.nextInt(); 
+                System.out.print("Enter Quantity: ");                 
+                int Quantity = sc.nextInt(); 
+                p[i] = new Purchase(PID, PName, Price, Quantity); 
+            } 
+        } 
+        System.out.print("PID \t PName \t Price \t Quantity \t Total \t BILL_AMOUNT"); 
+ 
+        for (int i = 0; i < n; i++) {             
+        p[i].display(); 
+        } 
+        int total = Purchase.getTotalBillAmount(); 
+ 
+        Purchase.displayTotalBillAmount(total); 
+    } 
+} 
+
+ 
+3. Create a class Area to calculate and display area of square, rectangle and triangle using the three same name methods. (Use function overloading concept).  
+ 
+import java.util.*; 
+ 
+class cal { 
+    void area(double length) { 
+        System.out.println("Area Of Square :" + (length * length)); 
+    } 
+ 
+    void area(long length, long width) { 
+        System.out.println("Area Of Rectangle :" + (length * width)); 
+    } 
+ 
+    void area(double length, double width) { 
+        System.out.println("Area Of Triangle :" + (length * width) / 2); 
+    } 
+} 
+ 
+public class P3 { 
+    public static void main(String[] args) {        
+    Scanner sc = new Scanner(System.in); 
+        cal obj = new cal();         
+        double a, b; 
+        System.out.print("Enter your lenght :");         
+        a = sc.nextDouble(); 
+        System.out.print("Enter your Breath :");         
+        b = sc.nextDouble(); 
+        obj.area(a);         
+        obj.area(a, b); 
+        obj.area((long) a, (long) b); 
+    } 
+}  
+ 
+ 
+4. Create class EMPLOYEE with id, name and salary data-members. Create 5 employee objects by using array of objects concept. Take input from user for creating these 5 employees (objects). Display all employee’s data (objects). Display all employee’s data (objects) in ascending order of salary. Display all employee’s data (objects) in descending order of name. 
+ 
+import java.util.Scanner; 
+ 
+class employee { 
+    int id, salary; 
+    String name; 
+    Scanner obj = new Scanner(System.in); 
+    Scanner obj1 = new Scanner(System.in); 
+ 
+    employee() { 
+        System.out.print("Enter Employee id :"); 
+        id = obj.nextInt(); 
+        System.out.print("Enter Employee Name :"); 
+        name = obj1.next(); 
+        System.out.print("Enter Employee Salary :"); 
+        salary = obj.nextInt(); 
+    } 
+ 
+    void display() { 
+        System.out.println(id + "\t" + name + "\t" + salary); 
+    } 
+}  
+public class P4 { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter Number of Employee :");         
+        int n = sc.nextInt(); 
+        employee[] a = new employee[n];         
+        employee temp; 
+        for (int i = 0; i < a.length; i++) { 
+            a[i] = new employee(); 
+        } 
+        for (int i = 0; i < a.length; i++) {             
+        		for (int j = 0; j < a.length; j++) {                
+            		if (a[i].salary > a[j].salary) {                    
+                		temp = a[i]; 
+                    a[i] = a[j];                     
+                    a[j] = temp; 
+                } 
+            } 
+        } 
+        System.out.println("---Sorting Oredre of Salary---"); 
+        for (int i = 0; i < a.length; i++) { 
+            a[i].display(); 
+        } 
+        System.out.println();       
+        for (int i = 0; i < n; i++) {             
+        		for (int j = i + 1; j < n; j++) {                 
+        				if ((a[i].name).compareTo(a[j].name) > 0) { 
+                    temp = a[i];                     
+                    a[i] = a[j];                     
+                    a[j] = temp; 
+                } 
+            } 
+        } 
+        System.out.println("---Sorting Oredre of Name---"); 
+        for (int i = 0; i < n; i++) {             
+        a[i].display(); 
+        } 
+    } 
+} 
+ 
+ 
+5. Write a java application which accept two strings. Merge both the string using alternate characters of each string. 
+For example. Enter string1 : “Hello”, Enter string2 : “Good”. 
+Result should be, “HGeololdo”.
+Another example. Enter string1 : “dog” and Enter string2 : “elephant”.
+Result should be, “deolgephant”.
+
+ 
+import java.util.Scanner; 
+ 
+public class P5 { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter the First String: "); 
+        String s1 = sc.nextLine(); 
+        System.out.print("Enter the Second String: "); 
+        String s2 = sc.nextLine(); 
+        StringBuilder str = new StringBuilder();         
+        for (int i = 0; i < s1.length() || i < s2.length(); i++) {             
+        	if (i < s1.length()) { 
+                str.append(s1.charAt(i)); 
+            } 
+        	if (i < s2.length()) {                 
+            str.append(s2.charAt(i)); 
+            } 
+        } 
+        System.out.println(str); 
+    } 
+} 
+ 
+7. Create your own User defined unchecked exception InvalidCharException if any one of the char @,*,? is present in name given by user. 
+ 
+import java.util.Scanner; public class P7 { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        String name; 
+        System.out.print("Enter Name :");         
+        name = sc.nextLine(); 
+        try { 
+            setName(name); 
+        } catch (InvalidCharException e) { 
+            System.out.println(e); 
+        } 
+        sc.close(); 
+    } 
+ 
+    static void setName(String name) { 
+        if (name.indexOf('@') >= 0 || name.indexOf('*') >= 0 || name.indexOf('?') >= 0) {             
+        throw new InvalidCharException("@, *, ?"); 
+        } else { 
+            System.out.println("Name = " + name); 
+        } 
+    } 
+} 
+class InvalidCharException extends RuntimeException { 
+    String ch; 
+ 
+    InvalidCharException(String str) { 
+        ch = str; 
+    } 
+ 
+    public String toString() { 
+        return "InvalidCharException [ You cannot use " + ch + " ]"; 
+    } 
+}  
+ 
+9. Write a program to make a package Balance in which Account class is with display_Balance method in it. Import Balance package in another program to access display_Balance method of Account class. 
+ 
+package Balance; 
+ 
+import java.util.*; 
+ 
+public class Account { 
+    public void display(int balance) { 
+        System.out.println("Currant Balance :" + balance); 
+    } 
+} 
+ 
+ 
+import Balance.Account; 
+import java.util.*; 
+ 
+public class P9 { 
+    public static void main(String args[]) { 
+        Scanner sc = new Scanner(System.in); 
+        Account ac = new Account(); 
+        System.out.println("Enter your balance :"); 
+        int bal = sc.nextInt();         
+        ac.display(bal); 
+    } 
+} 
+ 
+10. Create an applet program which display rotated text of your name at one place. 
+ 
+import java.awt.*; 
+import java.util.Set; 
+import java.applet.*; 
+
+ /* 
+<applet code="P10" width=800 height=600> 
+</applet> */ 
+
+public class P10 extends Applet { 
+    Font f; 
+    String msg = "Nirmal"; 
+    char ch; 
+ 
+    public void init() { 
+        f = new Font(msg, Font.BOLD, 50);         
+        setFont(f); 
+    } 
+ 
+    public void paint(Graphics g) {         
+    g.drawString(msg, 80, 80);         
+    ch = msg.charAt(0);        
+    msg = msg.substring(1); 
+    msg = msg + ch; 
+        try { 
+            Thread.sleep(500); 
+        } catch (Exception e) { 
+        }         repaint(); 
+    } 
+} 
+ 
+11. create an applet program which takes input from parameters through param tag for EMP class and Display name, age, salary, city of employee. 
+ 
+import java.awt.*; 
+import java.applet.*; 
+ 
+/* <applet code="P11.class" height=600 width=600> 
+<param name="age" value="19"> 
+<param name="salary" value="22000"> 
+<param name="city" value="Surat"> 
+</applet>*/ 
+
+public class P11 extends Applet { 
+    Font font; 
+ 
+    public void init() { 
+        font = new Font("Times New Roman", Font.PLAIN, 20); 
+    } 
+ 
+    public void paint(Graphics g) {         
+    		String age = getParameter("age"); 
+        String sal = getParameter("salary");         
+        String city = getParameter("city");         
+        g.setFont(font); 
+        g.drawRect(100, 100, 450, 250); 
+        g.setColor(Color.BLACK); 
+        g.drawString("age=" + age, 130, 230); 
+        g.drawString("Sal=" + sal, 230, 230); 
+        g.drawString("City=" + city, 370, 230); 
+    } 
+} 
+
+12. Write an applet program which shows Digital Clock. 
+ 
+import java.awt.*; 
+import java.applet.*; 
+import java.util.Date; 
+ 
+/* 
+<applet code="P12" width=600 height=600> 
+</applet> */ 
+
+public class P12 extends Applet {     
+		public void init() { 
+        Font f = new Font("Gill Sans Ultra Bold", Font.PLAIN, 25);         
+        setFont(f); 
+    } 
+ 
+     
+public void paint(Graphics g) { 
+        g.drawString(new Date().toString().substring(10, 19), 40, 40); 
+       
+        try { 
+            Thread.sleep(1000);         
+        } catch (Exception e) {} 
+        repaint(); 
+    } 
+} 
+ 
+13. Write a java program to create Singly Link List to perform create, insert, delete and display node using menu driven program.  
+ 
+import java.util.Scanner; 
+ 
+class Node { 
+    int data; 
+    Node next; 
+ 
+    public Node() {         
+    	data = 0;         
+   	 	next = null; 
+    } 
+}  
+class LinkedList {     
+		Node start; 
+    int size; 
+ 
+    public LinkedList() {         
+    	start = null; 
+    } 
+ 
+    public boolean isEmpty() {         
+    	if (start == null){         
+   				return true;
+    	}else{ 
+            return false; 
+    	}
+    } 
+ 
+    public void viewlist() {         
+    Node temp;         
+    if (isEmpty()) { 
+            System.out.println("list is empty : "); 
+        } else {             
+        temp = start;             
+        while (temp != null) {                 
+        System.out.println(temp.data);                 
+        temp = temp.next; 
+        } 
+            System.out.println("Current size of linked list : " + size); 
+        } 
+    } 
+ 
+    public void create(int val) {         
+    Node n;         
+    n = new Node();         
+    n.data = val; 
+    n.next = null;         
+    if (isEmpty()) {             
+    start = n;             
+    size++; 
+    } else { 
+            System.out.println("linked list is already created so insert node."); 
+        } 
+    } 
+ 
+    public void insert(int val) { 
+        Node ptr = start;        
+        Node n;         
+        n = new Node();         
+        n.data = val;         
+        while (ptr.next != null) {             
+        ptr = ptr.next; 
+        }         
+        ptr.next = n;         
+        size++; 
+    } 
+ 
+    public void delete() {         
+    if (isEmpty()) { 
+            System.out.println("linked list is Empty."); 
+        } else { 
+            Node ptr = start;             
+            Node before = start;             
+            while (ptr.next != null) {                 
+            before = ptr;                 
+            ptr = ptr.next; 
+            } 
+            System.out.println("Deleted Value : " + ptr.data); 
+ 
+            if (size == 1) {
+                start = null;             
+						} else{                 
+            		before.next = null;
+            }
+            size--; 
+        } 
+    } 
+}  
+public class P13 {     
+			public static void main(String[] args) {         
+      int ch; 
+        Scanner sc = new Scanner(System.in);         
+        LinkedList l1 = new LinkedList();         
+        do { 
+            System.out.println("0. Exit"); 
+            System.out.println("1. Create"); 
+            System.out.println("2. View List"); 
+            System.out.println("3. Insert"); 
+            System.out.println("4. Delete");             
+            System.out.print(">> Enter your Choice : "); 
+            ch = sc.nextInt();             
+            switch (ch) {                 
+            case 0: 
+                    System.out.println(">> Thank You"); 
+                    break;                 
+            case 1: 
+                    System.out.println(">> Enter any Value : "); 
+                    int val = sc.nextInt();                     
+                    l1.create(val);                     
+                    break;                 
+            case 2:                     
+            				l1.viewlist();                     
+                    break;                 
+            case 3: 
+                    System.out.println(">> Enter any Value : "); 
+                    val = sc.nextInt();                     
+                    l1.insert(val);                     
+                    break;                 
+            case 4: 
+                    l1.delete();             } 
+        } while (ch != 0);         
+        sc.close(); 
+    } 
+} 
+
+14. Write a java program to create cricular Link List to perform create, insert, delete and display node using menu driven program with menu driven. 
+
+import java.util.Scanner;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        next = null;
+    }
+}
+
+class CircularLinkedList {
+    private Node head;
+
+    CircularLinkedList() {
+        head = null;
+    }
+
+    // Create Node
+    void create(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+        } else {
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.next = head;
+        }
+    }
+
+    // Insert Node
+    void insert(int data, int position) {
+        if (head == null) {
+            System.out.println("List is empty. Cannot insert at specified position.");
+            return;
+        }
+        Node newNode = new Node(data);
+        if (position == 1) {
+            newNode.next = head;
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            head = newNode;
+        } else {
+            Node temp = head;
+            for (int i = 1; i < position - 1 && temp.next != head; i++) {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+    }
+
+    // Delete Node
+    void delete(int position) {
+        if (head == null) {
+            System.out.println("List is empty. Cannot delete.");
+            return;
+        }
+        if (position == 1) {
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            if (head == head.next) {
+                head = null;
+            } else {
+                temp.next = head.next;
+                head = head.next;
+            }
+        } else {
+            Node temp = head;
+            for (int i = 1; i < position - 1 && temp.next != head; i++) {
+                temp = temp.next;
+            }
+            if (temp.next == head) {
+                System.out.println("Position not found. Cannot delete.");
+                return;
+            }
+            temp.next = temp.next.next;
+        }
+    }
+
+    // Display List
+    void display() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CircularLinkedList list = new CircularLinkedList();
+
+        while (true) {
+            System.out.println("\nCircular Linked List Operations:");
+            System.out.println("1. Create");
+            System.out.println("2. Insert");
+            System.out.println("3. Delete");
+            System.out.println("4. Display");
+            System.out.println("5. Exit");
+
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter data to create: ");
+                    int createData = scanner.nextInt();
+                    list.create(createData);
+                    break;
+                case 2:
+                    System.out.print("Enter data to insert: ");
+                    int insertData = scanner.nextInt();
+                    System.out.print("Enter position to insert: ");
+                    int insertPosition = scanner.nextInt();
+                    list.insert(insertData, insertPosition);
+                    break;
+                case 3:
+                    System.out.print("Enter position to delete: ");
+                    int deletePosition = scanner.nextInt();
+                    list.delete(deletePosition);
+                    break;
+                case 4:
+                    System.out.print("Circular Linked List: ");
+                    list.display();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+            }
+        }
+    }
+}
